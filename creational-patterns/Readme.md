@@ -7,9 +7,6 @@
 1. Study and understand the Creational Design Patterns;
 2. Choose a domain, define its main classes/models/entities and choose the appropriate instantiation mechanisms;
 3. Based on the previous point, implement atleast 3 creational design patterns in project;
->I've used 3 design patterns - [Factory Method](https://sourcemaking.com/design_patterns/factory_method), [Abstract Factory](https://sourcemaking.com/design_patterns/abstract_factory) and [Builder](https://sourcemaking.com/design_patterns/builder).  
->Below is the description of project.
-
 
 ## Description & Implementation
 In this project I used the BMW 5-series building domain area. Where will be a factory named Factory which will have possibilities to build 3 types of cars: 
@@ -18,6 +15,8 @@ In this project I used the BMW 5-series building domain area. Where will be a fa
 * BMW 5-series Grand Turismo   
 
 I collect cars from the following auto parts: body, engine, drive type, salon. Those parts I collect separately using design patterns.  
+
+
 For the engine, body and drive type I used the [Factory Method](https://sourcemaking.com/design_patterns/factory_method) that allows an interface or a class to create an object, but let subclasses decide which class or object to instantiate. All the parts have separate interface to inherit and to use its methods in their product classes. Here is one example:
 
 ```python
