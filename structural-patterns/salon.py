@@ -48,6 +48,3 @@ class SalonBuilder(Builder):
         front_panel = self.add_front_panel()
         seats = self.add_seats()
         return Salon(front_panel, seats)
-
-builder = SalonBuilder().create_salon()
-salon = builder.standart_salon()
