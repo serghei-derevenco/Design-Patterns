@@ -7,8 +7,8 @@ class LoadCapacity(ABC):
 
 
 class TankCapacity(LoadCapacity):
-    def load_items(self, tank_capacity):
-        print(f"- Car has a tank of volume - {tank_capacity} liters")
+    def load_items(self, tank_volume):
+        print(f"- Car has a tank of volume - {tank_volume} liters")
 
 
 class TrunkCapacity(LoadCapacity):
