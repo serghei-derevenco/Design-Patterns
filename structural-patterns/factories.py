@@ -5,6 +5,7 @@ from drive_types import *
 from body_types import *
 from salon import *
 from car_load_capacity import *
+from exhaust_system import *
 
 class Factory(ABC):
     def __init__(self, LoadCapacity):
@@ -21,11 +22,8 @@ class Model(ABC):
     def __init__(self, car_model):
         self.car_model = car_model
 
-    def __str__(self):
-        return ''
-
     def show_model(self):
-        return self.car_model
+        print(self.car_model)
 
 class M5(Factory):
     def __init__(self, Load_Capacity, items):
@@ -34,7 +32,7 @@ class M5(Factory):
 
     def add_parts(self):
         model = Model("BMW M5")
-        print(model.show_model())
+        model.show_model()
         engine = Petrol()
         body_type = Sedan()
         spoiler = Spoiler(body_type, "carbon")
@@ -44,7 +42,8 @@ class M5(Factory):
         builder = SalonBuilder()
         salon = builder.create_salon()
         salon.add_alcantara()
-        return print(model), engine.add_engine(), body_type.add_body_type(), drive_type.add_drive_type(), print(salon)
+        exhaust_system = PowerfulAdapter('Akrapovic')
+        return engine.add_engine(), body_type.add_body_type(), drive_type.add_drive_type(), print(salon), exhaust_system.add_exhaust()
 
     def display_description(self):
         self.load_capacity.load_items(self.items)
@@ -56,7 +55,7 @@ class X5(Factory):
 
     def add_parts(self):
         model = Model("BMW X5")
-        print(model.show_model())
+        model.show_model()
         engine = Petrol()
         body_type = Suv()
         spoiler = Spoiler(body_type, "carbon")
@@ -66,7 +65,8 @@ class X5(Factory):
         builder = SalonBuilder()
         salon = builder.create_salon()
         salon.add_alcantara()
-        return print(model), engine.add_engine(), body_type.add_body_type(), drive_type.add_drive_type(), print(salon)
+        exhaust_system = PowerfulAdapter('Akrapovic')
+        return engine.add_engine(), body_type.add_body_type(), drive_type.add_drive_type(), print(salon), exhaust_system.add_exhaust()
 
     def display_description(self):
         self.load_capacity.load_items(self.items)
@@ -78,7 +78,7 @@ class GrandTurismo(Factory):
 
     def add_parts(self):
         model = Model("BMW 5-series Grand Turismo")
-        print(model.show_model())
+        model.show_model()
         engine = Diesel()
         body_type = Wagon()
         spoiler = Spoiler(body_type, "polimer")
@@ -88,7 +88,8 @@ class GrandTurismo(Factory):
         builder = SalonBuilder()
         salon = builder.create_salon()
         salon.standart_salon()
-        return print(model), engine.add_engine(), body_type.add_body_type(), drive_type.add_drive_type(), print(salon)
+        exhaust_system = StandartExhaust('BMW')
+        return engine.add_engine(), body_type.add_body_type(), drive_type.add_drive_type(), print(salon), exhaust_system.add_exhaust()
 
     def display_description(self):
         self.load_capacity.load_items(self.items)
