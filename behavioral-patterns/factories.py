@@ -6,6 +6,7 @@ from body_types import *
 from salon import *
 from car_load_capacity import *
 from exhaust_system import *
+from brake_system import *
 
 class Factory(ABC):
     def __init__(self, LoadCapacity):
@@ -43,7 +44,9 @@ class M5(Factory):
         salon = builder.create_salon()
         salon.add_alcantara()
         exhaust_system = PowerfulAdapter('Akrapovic')
-        return engine.add_engine(), body_type.add_body_type(), drive_type.add_drive_type(), print(salon), exhaust_system.add_exhaust()
+        cc_brake = CarbonCeramicBrake()
+        context = Context(cc_brake)
+        return engine.add_engine(), context.context_interface(), drive_type.add_drive_type(), print(salon), exhaust_system.add_exhaust()
 
     def display_description(self):
         self.load_capacity.load_items(self.items)
@@ -66,7 +69,9 @@ class X5(Factory):
         salon = builder.create_salon()
         salon.add_alcantara()
         exhaust_system = PowerfulAdapter('Akrapovic')
-        return engine.add_engine(), body_type.add_body_type(), drive_type.add_drive_type(), print(salon), exhaust_system.add_exhaust()
+        m_brake = MBrake()
+        context = Context(m_brake)
+        return engine.add_engine(), context.context_interface(), drive_type.add_drive_type(), print(salon), exhaust_system.add_exhaust()
 
     def display_description(self):
         self.load_capacity.load_items(self.items)
@@ -89,7 +94,9 @@ class GrandTurismo(Factory):
         salon = builder.create_salon()
         salon.standart_salon()
         exhaust_system = StandartExhaust('BMW')
-        return engine.add_engine(), body_type.add_body_type(), drive_type.add_drive_type(), print(salon), exhaust_system.add_exhaust()
+        standart_brake = StandartBrake()
+        context = Context(standart_brake)
+        return engine.add_engine(), context.context_interface(), drive_type.add_drive_type(), print(salon), exhaust_system.add_exhaust()
 
     def display_description(self):
         self.load_capacity.load_items(self.items)
