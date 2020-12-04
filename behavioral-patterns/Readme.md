@@ -43,7 +43,23 @@ class CarbonCeramicBrake(BrakeSystem):
     def set(self):
         print("- Carbon-ceramic sport brake system setted")
 ```
-## Results
+## Results  
+Below you can see the output with new feature:
+```
+Please select the model of BMW (m5 / x5 / grand turismo): m5
+BMW M5
+- Sedan body added
+        -- Carbon spoiler added
+        -- Black color added
+- Petrol engine added
+*- Carbon-ceramic sport brake system setted
+- Back wheel drive added
+- Salon from alcantara added
+- Akrapovic exhaust system added
+- Car has a tank of volume - 68 liters
+- Car has a trunk of volume - 530 liters
+
+```
 -----
 ## To Use
 * Firstly, clone this repository using [Git](https://git-scm.com) or download `.zip` archive with project.
